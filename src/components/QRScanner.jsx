@@ -30,7 +30,7 @@ export default function QRScanner() {
                 videoEl.current.srcObject = stream;
                 scanner.current = new QrScanner(videoEl.current, onScanSuccess, {
                     onDecodeError: onScanFail,
-                    preferredCamera: "user",
+                    preferredCamera: "environment",
                     highlightScanRegion: true,
                     highlightCodeOutline: true,
                     overlay: qrBoxEl?.current || undefined,
