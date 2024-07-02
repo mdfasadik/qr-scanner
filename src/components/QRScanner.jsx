@@ -15,7 +15,7 @@ export default function QRScanner() {
     const [cameraError, setCameraError] = useState("");
 
     const onScanSuccess = (result) => {
-        console.log(result);
+        alert(result);
         setScannedResult(result?.data);
     };
 
@@ -30,7 +30,7 @@ export default function QRScanner() {
                 videoEl.current.srcObject = stream;
                 scanner.current = new QrScanner(videoEl.current, onScanSuccess, {
                     onDecodeError: onScanFail,
-                    preferredCamera: "environment",
+                    preferredCamera: "user",
                     highlightScanRegion: true,
                     highlightCodeOutline: true,
                     overlay: qrBoxEl?.current || undefined,
